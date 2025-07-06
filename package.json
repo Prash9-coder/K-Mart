@@ -1,0 +1,23 @@
+{
+  "name": "kirana-market",
+  "version": "1.0.0",
+  "description": "Kirana Market - Full Stack E-commerce Application",
+  "main": "server/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/server.js",
+    "build": "cd server && npm install",
+    "dev": "cd server && npm run dev"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "ecommerce",
+    "mern",
+    "kirana",
+    "grocery"
+  ],
+  "author": "",
+  "license": "ISC"
+}
