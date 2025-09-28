@@ -6,10 +6,9 @@ import axios from 'axios'
 import App from './App.jsx'
 import { store } from './store'
 import './index.css'
-import './utils/testAuth.js' // Load test utilities
 
 // Configure axios defaults
-axios.defaults.baseURL = 'http://localhost:5000'
+axios.defaults.baseURL = import.meta.env.VITE_API_URL
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
