@@ -28,6 +28,9 @@ connectDB();
 
 const app = express();
 
+// Trust proxy for Replit environment (required for rate limiting and getting real IPs)
+app.set('trust proxy', 1);
+
 // Get current directory for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

@@ -31,3 +31,21 @@ Thumbs.db
 
 # Development files
 server/data
+server/uploads
+
+# Build directories
+client/dist
+client/build
+
+# Cache directories
+.cache
+.parcel-cache
+.npm
+.eslintcache
+
+# Testing
+coverage
+
+# Temporary files
+*.tmp
+*.temp
