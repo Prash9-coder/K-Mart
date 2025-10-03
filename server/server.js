@@ -49,37 +49,7 @@ app.use(limiter);
 
 // CORS configuration
 const corsOptions = {
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps, curl requests)
-    if (!origin) return callback(null, true);
-    
-    // List of allowed origins
-    const allowedOrigins = [
-      process.env.FRONTEND_URL,
-      'https://kirana-market.vercel.app',
-      'https://kirana-market-git-main-yourusername.vercel.app',
-      /\.vercel\.app$/,  // Allow all vercel.app subdomains
-      /\.replit\.dev$/,  // Allow all replit.dev subdomains
-      /\.replit\.app$/,  // Allow all replit.app subdomains
-      /localhost/,       // Allow localhost for development
-    ];
-    
-    // Check if the origin is allowed
-    const allowed = allowedOrigins.some(allowedOrigin => {
-      if (typeof allowedOrigin === 'string') {
-        return allowedOrigin === origin;
-      } else if (allowedOrigin instanceof RegExp) {
-        return allowedOrigin.test(origin);
-      }
-      return false;
-    });
-    
-    if (allowed) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: true,  // Allow all origins in development
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
